@@ -12,7 +12,9 @@ NSLayoutConstraint *mkConstraint(id view1, NSLayoutAttribute attr1, NSLayoutRela
 		attribute:attr2
 		multiplier:multiplier
 		constant:c];
-	FUTURE_NSLayoutConstraint_setIdentifier(constraint, desc);
+	// apparently only added in 10.9
+	if ([constraint respondsToSelector:@selector(setIdentifier:)])
+		[((id) constraint) setIdentifier:desc];
 	return constraint;
 }
 

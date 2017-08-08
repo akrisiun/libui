@@ -1,6 +1,5 @@
 // 6 september 2015
 #import "uipriv_darwin.h"
-#import "draw.h"
 
 struct uiDrawPath {
 	CGMutablePathRef path;
@@ -103,6 +102,11 @@ void uiDrawPathEnd(uiDrawPath *p)
 {
 	p->ended = TRUE;
 }
+
+struct uiDrawContext {
+	CGContextRef c;
+	CGFloat height;				// needed for text; see below
+};
 
 uiDrawContext *newContext(CGContextRef ctxt, CGFloat height)
 {
@@ -218,10 +222,6 @@ static void fillGradient(CGContextRef ctxt, uiDrawPath *p, uiDrawBrush *b)
 	// gradients need a color space
 	// for consistency with windows, use sRGB
 	colorspace = CGColorSpaceCreateWithName(kCGColorSpaceSRGB);
-	if (colorspace == NULL) {
-		// TODO
-	}
-	// TODO add NULL check to other uses of CGColorSpace
 
 	// make the gradient
 	colors = uiAlloc(b->NumStops * 4 * sizeof (CGFloat), "CGFloat[]");
@@ -446,4 +446,9 @@ void uiDrawSave(uiDrawContext *c)
 void uiDrawRestore(uiDrawContext *c)
 {
 	CGContextRestoreGState(c->c);
+}
+
+void uiDrawText(uiDrawContext *c, double x, double y, uiDrawTextLayout *layout)
+{
+	doDrawText(c->c, c->height, x, y, layout);
 }

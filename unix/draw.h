@@ -3,7 +3,6 @@
 // draw.c
 struct uiDrawContext {
 	cairo_t *cr;
-	GtkStyleContext *style;
 };
 
 // drawpath.c

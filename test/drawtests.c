@@ -4,7 +4,6 @@
 // TODO
 // - test multiple clips
 // - test saving and restoring clips
-// - copy tests from https://github.com/Microsoft/WinObjC
 
 struct drawtest {
 	const char *name;

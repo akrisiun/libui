@@ -1,0 +1,8 @@
+build/CMakeFiles/*.txt
+build/CMakeFiles/generate.*
+.vs*/
+build/*.cmake
+build/CMakeFiles/
+build/windows/CMakeFiles/
+*.depend
+build/ZERO_CHECK.*

@@ -32,7 +32,6 @@ static int value(uiSpinbox *s)
 
 // control implementation
 
-// TODO assign lResult
 static BOOL onWM_COMMAND(uiControl *c, HWND hwnd, WORD code, LRESULT *lResult)
 {
 	uiSpinbox *s = (uiSpinbox *) c;

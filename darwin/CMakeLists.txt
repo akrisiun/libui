@@ -1,11 +1,9 @@
 # 3 june 2016
 
 list(APPEND _LIBUI_SOURCES
-	darwin/aat.m
 	darwin/alloc.m
 	darwin/area.m
 	darwin/areaevents.m
-	darwin/attrstr.m
 	darwin/autolayout.m
 	darwin/box.m
 	darwin/button.m
@@ -20,10 +18,7 @@ list(APPEND _LIBUI_SOURCES
 	darwin/editablecombo.m
 	darwin/entry.m
 	darwin/fontbutton.m
-	darwin/fontmatch.m
 	darwin/form.m
-	darwin/future.m
-	darwin/graphemes.m
 	darwin/grid.m
 	darwin/group.m
 	darwin/image.m
@@ -32,7 +27,6 @@ list(APPEND _LIBUI_SOURCES
 	darwin/map.m
 	darwin/menu.m
 	darwin/multilineentry.m
-	darwin/opentype.m
 	darwin/progressbar.m
 	darwin/radiobuttons.m
 	darwin/scrollview.m
@@ -48,7 +42,6 @@ list(APPEND _LIBUI_SOURCES
 )
 set(_LIBUI_SOURCES ${_LIBUI_SOURCES} PARENT_SCOPE)
 
-# TODO is this correct?
 list(APPEND _LIBUI_INCLUDEDIRS
 	darwin
 )
@@ -59,7 +52,6 @@ if(NOT BUILD_SHARED_LIBS)
 	set(_LIBUINAME libui-temporary PARENT_SCOPE)
 endif()
 # thanks to Mr-Hide in irc.freenode.net/#cmake
-# TODO remove all these temporary files after linking the final archive file
 macro(_handle_static)
 	set_target_properties(${_LIBUINAME} PROPERTIES
 		ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")

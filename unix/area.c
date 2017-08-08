@@ -92,9 +92,6 @@ static void areaWidget_size_allocate(GtkWidget *w, GtkAllocation *allocation)
 
 	if (!a->scrolling)
 		// we must redraw everything on resize because Windows requires it
-		// TODO https://developer.gnome.org/gtk3/3.10/GtkWidget.html#gtk-widget-set-redraw-on-allocate ?
-		// TODO drop this rule; it was stupid and documenting this was stupid — let platforms where it matters do it on their own
-		// TODO or do we not, for parity of performance?
 		gtk_widget_queue_resize(w);
 }
 
@@ -122,8 +119,7 @@ static gboolean areaWidget_draw(GtkWidget *w, cairo_t *cr)
 	uiAreaDrawParams dp;
 	double clipX0, clipY0, clipX1, clipY1;
 
-	dp.Context = newContext(cr,
-		gtk_widget_get_style_context(a->widget));
+	dp.Context = newContext(cr);
 
 	loadAreaSize(a, &(dp.AreaWidth), &(dp.AreaHeight));
 
