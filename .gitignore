@@ -6,3 +6,7 @@ build/CMakeFiles/
 build/windows/CMakeFiles/
 *.depend
 build/ZERO_CHECK.*
+*.cmake
+*.vcxproj.filters
+build/CMakeCache.txt
+build/ALL_BUILD.vcxproj
