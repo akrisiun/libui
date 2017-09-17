@@ -5,8 +5,12 @@ build:
 	powershell ./build.ps1
 run:
 	./bin/controlgallery
+test:
+	./bin/test
+histogram:
+	./bin/histogram
 controls:
 	cd build/
 	make examples
 	cd ../
-	cp ./build/out/controlgallery ./bin
+	cp ./build/out/* ./bin
