@@ -59,6 +59,7 @@ ships with: Ubuntu Utopic (14.10)
 - **gtk_tree_path_new_from_indicesv()** (for when we add Table if we have trees too)
 
 ### GTK+ 3.14
+
 ships with: **Debian Jessie**, Ubuntu Vivid (15.04)
 <br>GLib version: Debian: 2.42, Ubuntu: 2.44
 

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/andriusk/Beta/PriceNet/SKIA/libui/examples/controlgallery/main.c
+stdio.h
+-
+string.h
+-
+../../ui.h
+/Users/andriusk/Beta/PriceNet/SKIA/libui/ui.h
+
+/Users/andriusk/Beta/PriceNet/SKIA/libui/ui.h
+stddef.h
+-
+stdint.h
+-
+

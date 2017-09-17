@@ -1,4 +1,4 @@
-# Install script for directory: /Users/andriusk/Beta/PriceNet/SKIA/libui/test
+# Install script for directory: /Users/andriusk/Beta/PriceNet/SKIA/libui/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
