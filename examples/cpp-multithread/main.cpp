@@ -1,8 +1,10 @@
 // 6 december 2015
-#include <thread>
-#include <chrono>
-#include <mutex>
-#include <condition_variable>
+
+// $$$$
+// #include <thread>
+// #include <chrono>
+// #include <mutex>
+// #include <condition_variable>
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
@@ -10,10 +12,10 @@
 using namespace std;
 
 uiMultilineEntry *e;
-condition_variable cv;
-mutex m;
-unique_lock<mutex> ourlock(m);
-thread *timeThread;
+// condition_variable cv;
+// mutex m;
+// unique_lock<mutex> ourlock(m);
+// thread *timeThread;
 
 void sayTime(void *data)
 {
@@ -23,6 +25,7 @@ void sayTime(void *data)
 	delete s;
 }
 
+/*
 void threadproc(void)
 {
 	ourlock.lock();
@@ -38,13 +41,16 @@ void threadproc(void)
 		uiQueueMain(sayTime, s);
 	}
 }
+*/
 
 int onClosing(uiWindow *w, void *data)
 {
-	cv.notify_all();
+	//$$$$
+	//cv.notify_all();
+
 	// C++ throws a hissy fit if you don't do this
 	// we might as well, to ensure no uiQueueMain() gets in after uiQuit()
-	timeThread->join();
+	// timeThread->join();
 	uiQuit();
 	return 1;
 }
@@ -82,8 +88,10 @@ int main(void)
 	uiBoxAppend(b, uiControl(e), 1);
 
 	// timeThread needs to lock ourlock itself - see http://stackoverflow.com/a/34121629/3408572
-	ourlock.unlock();
-	timeThread = new thread(threadproc);
+
+	// $$$
+	// ourlock.unlock();
+	// timeThread = new thread(threadproc);
 
 	uiWindowOnClosing(w, onClosing, NULL);
 	uiControlShow(uiControl(w));

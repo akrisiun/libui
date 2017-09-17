@@ -1,6 +1,6 @@
 build/CMakeFiles/*.txt
 build/CMakeFiles/generate.*
-.vs*/
+.vs/
 build/*.cmake
 build/CMakeFiles/
 build/windows/CMakeFiles/
@@ -10,3 +10,9 @@ build/ZERO_CHECK.*
 *.vcxproj.filters
 build/CMakeCache.txt
 build/ALL_BUILD.vcxproj
+bin/
+*.so
+*.lib
+libui-*.dir/
+libui.dir/
+

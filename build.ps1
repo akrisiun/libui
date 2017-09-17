@@ -18,6 +18,11 @@ if ($os == "osx")
     make tester examples
     # rm -rf *
     cmake .. -G "Unix Makefiles" -DBUILD_SHARED_LIBS=OFF
+    
     make tester examples
+    Write-Host "Result build/out"
+    ls -l build/out
+
+    cp build/out/
 }
 
