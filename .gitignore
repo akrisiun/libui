@@ -15,6 +15,7 @@ bin/
 *.lib
 *.dylib
 *.a
+*.o
 libui-*.dir/
 libui.dir/
-
+libui-temporary.dir/

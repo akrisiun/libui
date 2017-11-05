@@ -5,13 +5,19 @@ $pwd
 # mkdir build
 cd build
 
-#$os = "win"
-$os = "osx"
-if ($os == "win")
+$os = "win"
+$PSVersionTable.OS
+
+if ($PSVersionTable.OS.IndexOf("Darwin") -eq 0) {
+    $os = "osx"
+}
+
+if ($os -eq "win")
 {
    choco install -y cmake
 }
-if ($os == "osx")
+
+if ($os -eq "osx")
 {
     cmake --version
     cmake .. -G "Unix Makefiles"
@@ -23,6 +29,6 @@ if ($os == "osx")
     Write-Host "Result build/out"
     ls -l build/out
 
-    cp build/out/
+    cp ./build/out/controlgallery bin/*
 }
 
